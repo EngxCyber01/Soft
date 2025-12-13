@@ -46,6 +46,7 @@
             min-height: 100vh;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            margin: 0;
         }
 
         .container {
@@ -656,12 +657,14 @@
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             body {
-                padding: 0;
+                padding: 0 !important;
+                margin: 0 !important;
             }
             
             .container {
-                border-radius: 0;
-                box-shadow: none;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin: 0 !important;
             }
             
             header {
@@ -809,12 +812,14 @@
         /* Extra small mobile devices */
         @media (max-width: 480px) {
             body {
-                padding: 0;
+                padding: 0 !important;
+                margin: 0 !important;
             }
 
             .container {
-                border-radius: 0;
-                box-shadow: none;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                margin: 0 !important;
             }
 
             header h1 {
