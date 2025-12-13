@@ -2444,7 +2444,36 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 `;
                 
                 container.appendChild(questionDiv);
+                
+                // Restore answered state if question was already answered
+                if (q.answered) {
+                    // Mark the question as correct or incorrect
+                    if (q.userAnswer === q.correct) {
+                        questionDiv.classList.add('correct');
+                        document.getElementById(`q${q.id}-opt${q.userAnswer}`).classList.add('correct-answer');
+                    } else {
+                        questionDiv.classList.add('incorrect');
+                        document.getElementById(`q${q.id}-opt${q.userAnswer}`).classList.add('wrong-answer');
+                        document.getElementById(`q${q.id}-opt${q.correct}`).classList.add('correct-answer');
+                    }
+                    
+                    // Mark selected option
+                    document.getElementById(`q${q.id}-opt${q.userAnswer}`).classList.add('selected');
+                    
+                    // Disable all options
+                    for (let i = 0; i < q.options.length; i++) {
+                        const opt = document.getElementById(`q${q.id}-opt${i}`);
+                        opt.style.cursor = 'default';
+                        opt.style.pointerEvents = 'none';
+                    }
+                    
+                    // Show explanation
+                    document.getElementById(`explanation-${q.id}`).classList.add('show');
+                }
             });
+            
+            // Update score display after rendering
+            updateScoreDisplay();
         }
 
         function selectOption(questionId, optionIndex) {
@@ -2520,16 +2549,14 @@ Requirements Definition → System & Software Design → Implementation & Unit T
         }
 
         function filterQuestions(category) {
-            renderQuestions(category);
-            
             // Update active button
             document.querySelectorAll('.category-filter button').forEach(btn => {
                 btn.classList.remove('active');
             });
             event.target.classList.add('active');
             
-            // Reset quiz state
-            document.getElementById('scoreDisplay').classList.remove('show');
+            // Re-render questions with preserved state
+            renderQuestions(category);
         }
 
         function submitQuiz() {
