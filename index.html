@@ -960,7 +960,7 @@
     <div class="container">
         <header>
             <h1>📚 Software Engineering Comprehensive Review</h1>
-            <p>Introduction | Processes | Requirements | Agile Development</p>
+            <p>Introduction | Processes | Requirements | Non-functional Requirements | Agile Development</p>
         </header>
 
         <nav>
@@ -968,6 +968,7 @@
                 <li><button onclick="showSection('intro')" class="active">Introduction</button></li>
                 <li><button onclick="showSection('processes')">SW Processes</button></li>
                 <li><button onclick="showSection('requirements')">Requirements</button></li>
+                <li><button onclick="showSection('nonfunctional')">Non-functional Req</button></li>
                 <li><button onclick="showSection('agile')">Agile Methodologies</button></li>
                 <li><button onclick="showSection('stories')">User Stories</button></li>
                 <li><button onclick="showSection('quizzes')">🎯 Quizzes</button></li>
@@ -1458,6 +1459,359 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 </div>
             </section>
 
+            <!-- NON-FUNCTIONAL REQUIREMENTS IMPLEMENTATION SECTION -->
+            <section id="nonfunctional">
+                <h2>⚙️ Non-Functional Requirements Implementation</h2>
+
+                <h3>What are Non-Functional Requirements (NFRs)?</h3>
+                <div class="card">
+                    <p><strong>Definition:</strong> Non-functional requirements define the quality attributes, system properties, and constraints that specify how a system should behave rather than what it should do.</p>
+                    <p>While functional requirements describe what the system does, NFRs describe how well the system performs its functions.</p>
+                </div>
+
+                <h3>Categories of Non-Functional Requirements</h3>
+                <div class="grid">
+                    <div class="grid-item">
+                        <h4>⚡ Performance</h4>
+                        <p>Response time, throughput, resource utilization, and scalability requirements</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>🔒 Security</h4>
+                        <p>Authentication, authorization, data protection, and privacy requirements</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>🎯 Usability</h4>
+                        <p>User interface design, accessibility, learnability, and user experience</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>🛡️ Reliability</h4>
+                        <p>Availability, fault tolerance, recoverability, and accuracy</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>🔧 Maintainability</h4>
+                        <p>Modularity, testability, analyzability, and modifiability</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>🌐 Portability</h4>
+                        <p>Adaptability, installability, and replaceability across platforms</p>
+                    </div>
+                </div>
+
+                <h3>ISO 25010 Quality Model</h3>
+                <div class="card">
+                    <p>The ISO 25010 standard defines eight quality characteristics for software systems:</p>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Quality Characteristic</th>
+                                    <th>Sub-characteristics</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Functional Suitability</td>
+                                    <td data-label="Sub-characteristics">Completeness, Correctness, Appropriateness</td>
+                                    <td data-label="Description">Degree to which product provides functions that meet stated needs</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Performance Efficiency</td>
+                                    <td data-label="Sub-characteristics">Time behavior, Resource utilization, Capacity</td>
+                                    <td data-label="Description">Performance relative to resources used under stated conditions</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Compatibility</td>
+                                    <td data-label="Sub-characteristics">Co-existence, Interoperability</td>
+                                    <td data-label="Description">Ability to exchange information and perform functions while sharing environment</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Usability</td>
+                                    <td data-label="Sub-characteristics">Learnability, Operability, User error protection, Accessibility, UI aesthetics</td>
+                                    <td data-label="Description">Degree to which product can be used by specified users to achieve goals</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Reliability</td>
+                                    <td data-label="Sub-characteristics">Maturity, Availability, Fault tolerance, Recoverability</td>
+                                    <td data-label="Description">Degree to which system performs specified functions under stated conditions</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Security</td>
+                                    <td data-label="Sub-characteristics">Confidentiality, Integrity, Non-repudiation, Accountability, Authenticity</td>
+                                    <td data-label="Description">Degree to which product protects information and data</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Maintainability</td>
+                                    <td data-label="Sub-characteristics">Modularity, Reusability, Analyzability, Modifiability, Testability</td>
+                                    <td data-label="Description">Degree of effectiveness and efficiency in modifying the product</td>
+                                </tr>
+                                <tr>
+                                    <td data-label="Quality Characteristic">Portability</td>
+                                    <td data-label="Sub-characteristics">Adaptability, Installability, Replaceability</td>
+                                    <td data-label="Description">Degree of effectiveness transferring system to different environments</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <h3>Implementation Strategies</h3>
+
+                <h4>1. Performance Implementation</h4>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h4 style="color: #6366f1; margin-top: 0;">⚡ Optimization Techniques</h4>
+                        <ul>
+                            <li><strong>Caching:</strong> Store frequently accessed data in memory</li>
+                            <li><strong>Load Balancing:</strong> Distribute workload across multiple servers</li>
+                            <li><strong>Database Indexing:</strong> Speed up query performance</li>
+                            <li><strong>Code Optimization:</strong> Efficient algorithms and data structures</li>
+                            <li><strong>Asynchronous Processing:</strong> Non-blocking operations</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #8b5cf6; margin-top: 0;">📊 Monitoring & Metrics</h4>
+                        <ul>
+                            <li>Response time measurement</li>
+                            <li>Throughput tracking</li>
+                            <li>CPU and memory utilization</li>
+                            <li>Network latency monitoring</li>
+                            <li>Performance profiling tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>2. Security Implementation</h4>
+                <div class="important">
+                    <h4>Key Security Practices:</h4>
+                    <ul>
+                        <li><strong>Authentication:</strong> Multi-factor authentication, OAuth, JWT tokens</li>
+                        <li><strong>Authorization:</strong> Role-based access control (RBAC), permissions</li>
+                        <li><strong>Encryption:</strong> Data at rest (AES) and in transit (TLS/SSL)</li>
+                        <li><strong>Input Validation:</strong> Prevent SQL injection, XSS attacks</li>
+                        <li><strong>Security Testing:</strong> Penetration testing, vulnerability scanning</li>
+                        <li><strong>Audit Logging:</strong> Track all security-relevant events</li>
+                    </ul>
+                </div>
+
+                <div class="example">
+<strong>Security Implementation Example:</strong>
+
+// Password hashing
+const bcrypt = require('bcrypt');
+const hashedPassword = await bcrypt.hash(password, 10);
+
+// JWT token generation
+const jwt = require('jsonwebtoken');
+const token = jwt.sign({ userId: user.id }, SECRET_KEY, { expiresIn: '1h' });
+
+// Input validation
+const validator = require('validator');
+if (!validator.isEmail(email)) {
+    throw new Error('Invalid email format');
+}
+                </div>
+
+                <h4>3. Usability Implementation</h4>
+                <div class="grid">
+                    <div class="grid-item">
+                        <h4>🎨 UI/UX Principles</h4>
+                        <ul>
+                            <li>Consistent design patterns</li>
+                            <li>Clear navigation</li>
+                            <li>Responsive design</li>
+                            <li>Error prevention & recovery</li>
+                            <li>Accessibility (WCAG)</li>
+                        </ul>
+                    </div>
+                    <div class="grid-item">
+                        <h4>♿ Accessibility</h4>
+                        <ul>
+                            <li>Screen reader support</li>
+                            <li>Keyboard navigation</li>
+                            <li>Color contrast ratios</li>
+                            <li>Alt text for images</li>
+                            <li>ARIA labels</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h4>4. Reliability Implementation</h4>
+                <div class="success">
+                    <h4>Reliability Techniques:</h4>
+                    <ul>
+                        <li><strong>Redundancy:</strong> Multiple instances, failover systems</li>
+                        <li><strong>Health Checks:</strong> Regular system monitoring</li>
+                        <li><strong>Backup & Recovery:</strong> Regular backups, disaster recovery plans</li>
+                        <li><strong>Error Handling:</strong> Graceful degradation, retry mechanisms</li>
+                        <li><strong>High Availability:</strong> 99.9% uptime targets (three nines)</li>
+                    </ul>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Availability Level</th>
+                                <th>Uptime %</th>
+                                <th>Downtime per Year</th>
+                                <th>Downtime per Month</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Availability Level">Two nines</td>
+                                <td data-label="Uptime %">99%</td>
+                                <td data-label="Downtime per Year">3.65 days</td>
+                                <td data-label="Downtime per Month">7.2 hours</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Availability Level">Three nines</td>
+                                <td data-label="Uptime %">99.9%</td>
+                                <td data-label="Downtime per Year">8.76 hours</td>
+                                <td data-label="Downtime per Month">43.2 minutes</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Availability Level">Four nines</td>
+                                <td data-label="Uptime %">99.99%</td>
+                                <td data-label="Downtime per Year">52.6 minutes</td>
+                                <td data-label="Downtime per Month">4.32 minutes</td>
+                            </tr>
+                            <tr>
+                                <td data-label="Availability Level">Five nines</td>
+                                <td data-label="Uptime %">99.999%</td>
+                                <td data-label="Downtime per Year">5.26 minutes</td>
+                                <td data-label="Downtime per Month">25.9 seconds</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>Testing Non-Functional Requirements</h3>
+
+                <h4>Performance Testing</h4>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h4 style="color: #10b981; margin-top: 0;">🔄 Load Testing</h4>
+                        <p>Testing system behavior under expected load conditions</p>
+                        <p><strong>Tools:</strong> JMeter, Gatling, LoadRunner</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #f59e0b; margin-top: 0;">⚡ Stress Testing</h4>
+                        <p>Testing system behavior beyond normal capacity</p>
+                        <p><strong>Purpose:</strong> Find breaking point and recovery</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #ec4899; margin-top: 0;">📈 Spike Testing</h4>
+                        <p>Testing sudden increases in load</p>
+                        <p><strong>Scenario:</strong> Flash sales, viral content</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #8b5cf6; margin-top: 0;">⏱️ Endurance Testing</h4>
+                        <p>Testing system over extended periods</p>
+                        <p><strong>Goal:</strong> Detect memory leaks, degradation</p>
+                    </div>
+                </div>
+
+                <h4>Security Testing</h4>
+                <div class="card">
+                    <ul>
+                        <li><strong>Penetration Testing:</strong> Simulate attacks to find vulnerabilities</li>
+                        <li><strong>Vulnerability Scanning:</strong> Automated tools to detect known issues</li>
+                        <li><strong>Security Audits:</strong> Review code and configurations</li>
+                        <li><strong>Compliance Testing:</strong> Verify adherence to standards (GDPR, HIPAA)</li>
+                    </ul>
+                </div>
+
+                <h4>Usability Testing</h4>
+                <div class="card">
+                    <ul>
+                        <li><strong>User Testing:</strong> Real users complete tasks</li>
+                        <li><strong>A/B Testing:</strong> Compare different design versions</li>
+                        <li><strong>Accessibility Testing:</strong> Test with assistive technologies</li>
+                        <li><strong>Cognitive Walkthrough:</strong> Evaluate learnability</li>
+                    </ul>
+                </div>
+
+                <h3>Best Practices for NFR Implementation</h3>
+                <div class="important">
+                    <h4>✅ Implementation Checklist:</h4>
+                    <ol>
+                        <li><strong>Early Identification:</strong> Define NFRs during requirements phase</li>
+                        <li><strong>Quantifiable Metrics:</strong> Use measurable targets (e.g., "response time < 200ms")</li>
+                        <li><strong>Prioritization:</strong> Not all NFRs are equally important</li>
+                        <li><strong>Trade-off Analysis:</strong> Balance conflicting requirements (security vs performance)</li>
+                        <li><strong>Continuous Monitoring:</strong> Track metrics in production</li>
+                        <li><strong>Automated Testing:</strong> Include NFR tests in CI/CD pipeline</li>
+                        <li><strong>Architecture Design:</strong> Design for NFRs from the start</li>
+                        <li><strong>Regular Review:</strong> Reassess NFRs as system evolves</li>
+                    </ol>
+                </div>
+
+                <h3>Common NFR Specification Examples</h3>
+                <div class="example">
+<strong>Performance NFRs:</strong>
+- The system shall respond to user queries within 2 seconds for 95% of requests
+- The system shall support 10,000 concurrent users
+- Database queries shall execute in less than 100ms
+- Page load time shall not exceed 3 seconds on 3G network
+
+<strong>Security NFRs:</strong>
+- All user passwords shall be encrypted using bcrypt with salt
+- System shall implement two-factor authentication for admin accounts
+- All API communications shall use TLS 1.3 or higher
+- System shall lock accounts after 5 failed login attempts
+
+<strong>Usability NFRs:</strong>
+- New users shall complete registration within 3 minutes
+- System shall be accessible to WCAG 2.1 Level AA standards
+- Error messages shall be displayed in user's preferred language
+- All critical actions shall require user confirmation
+
+<strong>Reliability NFRs:</strong>
+- System shall have 99.9% uptime (excluding planned maintenance)
+- System shall recover from crashes within 30 seconds
+- Data backups shall be performed every 6 hours
+- System shall handle component failures without data loss
+                </div>
+
+                <h3>Design Patterns for NFRs</h3>
+                <div class="cards-grid">
+                    <div class="card">
+                        <h4 style="color: #6366f1; margin-top: 0;">🔄 Circuit Breaker</h4>
+                        <p><strong>Purpose:</strong> Prevent cascading failures</p>
+                        <p><strong>NFR:</strong> Reliability, Fault tolerance</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #10b981; margin-top: 0;">💾 Caching</h4>
+                        <p><strong>Purpose:</strong> Improve response time</p>
+                        <p><strong>NFR:</strong> Performance, Scalability</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #f59e0b; margin-top: 0;">⚖️ Load Balancer</h4>
+                        <p><strong>Purpose:</strong> Distribute traffic</p>
+                        <p><strong>NFR:</strong> Performance, Availability</p>
+                    </div>
+                    <div class="card">
+                        <h4 style="color: #ec4899; margin-top: 0;">🔐 Encryption Layer</h4>
+                        <p><strong>Purpose:</strong> Protect data</p>
+                        <p><strong>NFR:</strong> Security, Privacy</p>
+                    </div>
+                </div>
+
+                <h3>Challenges in NFR Implementation</h3>
+                <div class="card">
+                    <ul>
+                        <li><strong>Conflicting Requirements:</strong> Performance vs Security trade-offs</li>
+                        <li><strong>Measurement Difficulty:</strong> Some qualities hard to quantify (e.g., usability)</li>
+                        <li><strong>Late Discovery:</strong> NFRs often identified late in development</li>
+                        <li><strong>Resource Constraints:</strong> Time and budget limitations</li>
+                        <li><strong>Changing Standards:</strong> Security and compliance requirements evolve</li>
+                        <li><strong>Testing Complexity:</strong> Requires specialized tools and expertise</li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- QUIZZES SECTION -->
             <section id="quizzes">
                 <h2>🧠 Test Your Knowledge - Multiple Choice Quizzes</h2>
@@ -1465,10 +1819,11 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 <div class="score-display" id="scoreDisplay"></div>
 
                 <div class="category-filter">
-                    <button onclick="filterQuestions('all')" class="active">All Questions (55)</button>
+                    <button onclick="filterQuestions('all')" class="active">All Questions (70)</button>
                     <button onclick="filterQuestions('intro')">Introduction (15)</button>
                     <button onclick="filterQuestions('processes')">SW Processes (15)</button>
                     <button onclick="filterQuestions('requirements')">Requirements (12)</button>
+                    <button onclick="filterQuestions('nonfunctional')">Non-functional (15)</button>
                     <button onclick="filterQuestions('agile')">Agile (13)</button>
                 </div>
 
@@ -2235,9 +2590,206 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'Elicitation techniques include interviews, ethnography, scenarios/stories, and prototyping. Code compilation is not an elicitation technique.'
             },
 
-            // AGILE METHODOLOGY QUESTIONS (13)
+            // NON-FUNCTIONAL REQUIREMENTS QUESTIONS (15)
             {
                 id: 43,
+                category: 'nonfunctional',
+                question: 'What are non-functional requirements?',
+                options: [
+                    'Requirements that describe what the system should do',
+                    'Requirements that describe how well the system performs its functions',
+                    'Requirements that are optional',
+                    'Requirements only for documentation'
+                ],
+                correct: 1,
+                explanation: 'Non-functional requirements define quality attributes and constraints that specify how well a system should perform, rather than what it should do.'
+            },
+            {
+                id: 44,
+                category: 'nonfunctional',
+                question: 'Which is NOT a category of non-functional requirements?',
+                options: [
+                    'Performance',
+                    'Security',
+                    'User stories',
+                    'Reliability'
+                ],
+                correct: 2,
+                explanation: 'User stories are a functional requirement technique. NFR categories include performance, security, usability, reliability, maintainability, and portability.'
+            },
+            {
+                id: 45,
+                category: 'nonfunctional',
+                question: 'According to ISO 25010, which is a quality characteristic?',
+                options: [
+                    'Functional Suitability',
+                    'Code length',
+                    'Number of developers',
+                    'Project cost'
+                ],
+                correct: 0,
+                explanation: 'ISO 25010 defines eight quality characteristics including Functional Suitability, Performance Efficiency, Compatibility, Usability, Reliability, Security, Maintainability, and Portability.'
+            },
+            {
+                id: 46,
+                category: 'nonfunctional',
+                question: 'What does "99.9% availability" (three nines) mean in terms of yearly downtime?',
+                options: [
+                    '3.65 days',
+                    '8.76 hours',
+                    '52.6 minutes',
+                    '5.26 minutes'
+                ],
+                correct: 1,
+                explanation: '99.9% availability (three nines) allows for approximately 8.76 hours of downtime per year.'
+            },
+            {
+                id: 47,
+                category: 'nonfunctional',
+                question: 'Which technique improves performance by storing frequently accessed data in memory?',
+                options: [
+                    'Encryption',
+                    'Caching',
+                    'Authentication',
+                    'Logging'
+                ],
+                correct: 1,
+                explanation: 'Caching stores frequently accessed data in memory to reduce retrieval time and improve performance.'
+            },
+            {
+                id: 48,
+                category: 'nonfunctional',
+                question: 'What is the purpose of load testing?',
+                options: [
+                    'Testing security vulnerabilities',
+                    'Testing system behavior under expected load conditions',
+                    'Testing user interface design',
+                    'Testing code quality'
+                ],
+                correct: 1,
+                explanation: 'Load testing evaluates system behavior and performance under expected user load conditions.'
+            },
+            {
+                id: 49,
+                category: 'nonfunctional',
+                question: 'Which security practice involves converting passwords into hash values?',
+                options: [
+                    'Encryption',
+                    'Authentication',
+                    'Password hashing',
+                    'Authorization'
+                ],
+                correct: 2,
+                explanation: 'Password hashing converts passwords into irreversible hash values for secure storage, typically using algorithms like bcrypt.'
+            },
+            {
+                id: 50,
+                category: 'nonfunctional',
+                question: 'WCAG standards relate to which non-functional requirement?',
+                options: [
+                    'Performance',
+                    'Security',
+                    'Usability/Accessibility',
+                    'Reliability'
+                ],
+                correct: 2,
+                explanation: 'WCAG (Web Content Accessibility Guidelines) standards ensure web content is accessible to people with disabilities, addressing usability requirements.'
+            },
+            {
+                id: 51,
+                category: 'nonfunctional',
+                question: 'What is the Circuit Breaker design pattern used for?',
+                options: [
+                    'Improving user interface',
+                    'Preventing cascading failures',
+                    'Encrypting data',
+                    'Compiling code'
+                ],
+                correct: 1,
+                explanation: 'The Circuit Breaker pattern prevents cascading failures by stopping requests to a failing service, improving system reliability.'
+            },
+            {
+                id: 52,
+                category: 'nonfunctional',
+                question: 'Which type of testing evaluates system behavior beyond normal capacity?',
+                options: [
+                    'Unit testing',
+                    'Load testing',
+                    'Stress testing',
+                    'Regression testing'
+                ],
+                correct: 2,
+                explanation: 'Stress testing pushes the system beyond normal capacity to find the breaking point and test recovery capabilities.'
+            },
+            {
+                id: 53,
+                category: 'nonfunctional',
+                question: 'TLS/SSL protocols are primarily used to ensure:',
+                options: [
+                    'Faster performance',
+                    'Data encryption in transit',
+                    'Better usability',
+                    'Code maintainability'
+                ],
+                correct: 1,
+                explanation: 'TLS/SSL protocols encrypt data transmitted over networks, ensuring security and privacy of communications.'
+            },
+            {
+                id: 54,
+                category: 'nonfunctional',
+                question: 'Which ISO 25010 sub-characteristic relates to protecting information from unauthorized access?',
+                options: [
+                    'Availability',
+                    'Confidentiality',
+                    'Usability',
+                    'Portability'
+                ],
+                correct: 1,
+                explanation: 'Confidentiality is a sub-characteristic of Security in ISO 25010, ensuring information is protected from unauthorized access.'
+            },
+            {
+                id: 55,
+                category: 'nonfunctional',
+                question: 'What is the main challenge with non-functional requirements?',
+                options: [
+                    'They are always easy to implement',
+                    'They never conflict with each other',
+                    'They can be difficult to quantify and may conflict (e.g., security vs performance)',
+                    'They are only needed for small projects'
+                ],
+                correct: 2,
+                explanation: 'NFRs are challenging because they can be hard to quantify, often conflict with each other (like security vs performance), and may be discovered late.'
+            },
+            {
+                id: 56,
+                category: 'nonfunctional',
+                question: 'Which is an example of a quantifiable performance requirement?',
+                options: [
+                    'The system should be fast',
+                    'The system shall respond to queries within 2 seconds',
+                    'The system should work well',
+                    'The system must be user-friendly'
+                ],
+                correct: 1,
+                explanation: 'Good NFRs are quantifiable and measurable. "Respond within 2 seconds" provides a specific, testable metric.'
+            },
+            {
+                id: 57,
+                category: 'nonfunctional',
+                question: 'What does RBAC stand for in security implementation?',
+                options: [
+                    'Random Backup And Control',
+                    'Role-Based Access Control',
+                    'Reliable Backend Application Code',
+                    'Rapid Basic Authentication Check'
+                ],
+                correct: 1,
+                explanation: 'RBAC (Role-Based Access Control) is a security approach where access permissions are assigned based on user roles.'
+            },
+
+            // AGILE METHODOLOGY QUESTIONS (13)
+            {
+                id: 58,
                 category: 'agile',
                 question: 'The Agile Manifesto values "Individuals and interactions" over:',
                 options: [
@@ -2250,7 +2802,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'The Agile Manifesto values "Individuals and interactions over processes and tools" as one of its four core values.'
             },
             {
-                id: 44,
+                id: 59,
                 category: 'agile',
                 question: 'Extreme Programming (XP) emphasizes:',
                 options: [
@@ -2263,7 +2815,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'XP emphasizes practices like pair programming, test-first development, continuous integration, and refactoring.'
             },
             {
-                id: 45,
+                id: 60,
                 category: 'agile',
                 question: 'In Scrum, a Sprint typically lasts:',
                 options: [
@@ -2276,7 +2828,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'A Sprint in Scrum is a time-boxed iteration that typically lasts 2-4 weeks.'
             },
             {
-                id: 46,
+                id: 61,
                 category: 'agile',
                 question: 'The Scrum Master is responsible for:',
                 options: [
@@ -2289,7 +2841,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'The Scrum Master ensures that the Scrum framework is followed, removes impediments, and facilitates Scrum events.'
             },
             {
-                id: 47,
+                id: 62,
                 category: 'agile',
                 question: 'Test-Driven Development (TDD) means:',
                 options: [
@@ -2302,7 +2854,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'TDD involves writing automated tests before writing the code, then writing code to pass the tests.'
             },
             {
-                id: 48,
+                id: 63,
                 category: 'agile',
                 question: 'The Product Backlog in Scrum contains:',
                 options: [
@@ -2315,7 +2867,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'The Product Backlog is a prioritized list of product requirements and features maintained by the Product Owner.'
             },
             {
-                id: 49,
+                id: 64,
                 category: 'agile',
                 question: 'Pair programming involves:',
                 options: [
@@ -2328,7 +2880,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'Pair programming is an XP practice where two programmers work together at one workstation, with one writing code and the other reviewing.'
             },
             {
-                id: 50,
+                id: 65,
                 category: 'agile',
                 question: 'A Daily Scrum (stand-up) should last:',
                 options: [
@@ -2341,7 +2893,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'The Daily Scrum is a 15-minute time-boxed event where the team synchronizes and plans for the next 24 hours.'
             },
             {
-                id: 51,
+                id: 66,
                 category: 'agile',
                 question: 'Refactoring means:',
                 options: [
@@ -2354,7 +2906,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'Refactoring is improving the internal structure of code without changing its external behavior to make it easier to understand and modify.'
             },
             {
-                id: 52,
+                id: 67,
                 category: 'agile',
                 question: 'Agile methods are BEST suited for:',
                 options: [
@@ -2367,7 +2919,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'Agile methods work best for small to medium-sized products where requirements are expected to change and customer involvement is possible.'
             },
             {
-                id: 53,
+                id: 68,
                 category: 'agile',
                 question: 'Continuous Integration means:',
                 options: [
@@ -2380,7 +2932,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'Continuous Integration involves frequently integrating code changes into a shared repository and automatically testing each integration.'
             },
             {
-                id: 54,
+                id: 69,
                 category: 'agile',
                 question: 'The Sprint Retrospective is held to:',
                 options: [
@@ -2393,7 +2945,7 @@ Requirements Definition → System & Software Design → Implementation & Unit T
                 explanation: 'The Sprint Retrospective is where the team reflects on the sprint and identifies process improvements for the next sprint.'
             },
             {
-                id: 55,
+                id: 70,
                 category: 'agile',
                 question: 'Collective ownership in XP means:',
                 options: [
